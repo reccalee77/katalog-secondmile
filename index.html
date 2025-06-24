@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Energetic Professional (Slate, Zinc, Red) -->
-    <!-- Application Structure Plan: The SPA is designed as a single, scrollable page with interactive components to enhance user exploration. It starts with a Hero section to state the value proposition. The core is a responsive 'Feature Comparison' section that displays as a detailed table on large screens and stacks into individual cards on mobile for optimal viewing. This is followed by a 'Package Value Visualized' section with a Chart.js bar chart. Below this, 'A La Carte' and 'Additional Services' are presented in a clear responsive grid. The structure concludes with a strong 'Call to Action' section. This dual layout for packages ensures usability across all devices. -->
-    <!-- Visualization & Content Choices: 1. Package Explorer (Responsive Table/Cards): Report Info: Details of Paket A, B, C & new features. -> Goal: Compare/Organize. -> Method: Feature comparison table (desktop) and stacked cards (mobile). -> Interaction: Visual scanning. -> Justification: The user requested a mobile-friendliness. A responsive layout that adapts from a table to cards is the best practice for complex data comparison. -> Library: Tailwind CSS. 2. Value Comparison Chart: Report Info: Content items per package. -> Goal: Compare/Analyze. -> Method: Bar Chart. -> Interaction: Hover tooltips. -> Justification: Provides a quick data-driven summary. -> Library: Chart.js (Canvas). -->
+    <!-- Application Structure Plan: The SPA is designed as a single, scrollable page with interactive components to enhance user exploration. It starts with a Hero section to state the value proposition. The core is a 'Feature Comparison' section that displays as a detailed table on all screens. This is followed by a 'Package Value Visualized' section with a Chart.js bar chart. Below this, 'A La Carte' and 'Additional Services' are presented in a clear responsive grid. The structure concludes with a strong 'Call to Action' section. The layout is now fixed to the desktop table view for all screen sizes. -->
+    <!-- Visualization & Content Choices: 1. Package Explorer (Table): Report Info: Details of Paket A, B, C & new features. -> Goal: Compare/Organize. -> Method: Feature comparison table. -> Interaction: Visual scanning, horizontal scrolling on small screens. -> Justification: The user requested to disable the mobile-specific view. The table is now the primary view on all devices. -> Library: Tailwind CSS. 2. Value Comparison Chart: Report Info: Content items per package. -> Goal: Compare/Analyze. -> Method: Bar Chart. -> Interaction: Hover tooltips. -> Justification: Provides a quick data-driven summary. -> Library: Chart.js (Canvas). -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
@@ -60,16 +60,16 @@
                 </p>
             </section>
 
-            <!-- Packages Section - FULLY RESPONSIVE -->
+            <!-- Packages Section - DESKTOP-ONLY VIEW -->
             <section id="packages" class="mb-16">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-3xl font-bold">Bandingkan Paket Layanan Kami</h2>
                     <p class="text-slate-600 mt-2">Pilih paket yang paling sesuai dengan visi dan kebutuhan gereja Anda.</p>
                 </div>
                 
-                <!-- Desktop Table View -->
-                <div class="hidden lg:block w-full max-w-6xl mx-auto">
-                    <div class="bg-white shadow-xl rounded-2xl p-2 md:p-4">
+                <!-- Desktop Table View (Always Visible) -->
+                <div class="w-full max-w-6xl mx-auto overflow-x-auto">
+                    <div class="bg-white shadow-xl rounded-2xl p-2 md:p-4 min-w-[768px]">
                         <table class="w-full text-center border-collapse">
                             <thead>
                                 <tr>
@@ -180,42 +180,6 @@
                                 </tfoot>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!-- Mobile Card View -->
-                <div class="block lg:hidden space-y-8">
-                    <!-- Paket A Card -->
-                    <div class="bg-white shadow-lg rounded-xl p-6">
-                        <h3 class="text-2xl font-bold text-red-700">Paket A: Starter</h3>
-                        <p class="text-2xl font-bold mt-4">Rp 2.550k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
-                        <ul class="mt-6 space-y-4">
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Monthly Content Plan</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Caption & Scheduling</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Laporan & Meeting Bulanan</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Konten Gambar, Carousel, Video & Poster</li>
-                        </ul>
-                    </div>
-                    <!-- Paket B Card (Popular) -->
-                     <div class="bg-white shadow-2xl rounded-xl p-6 border-2 border-red-500 relative">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">PALING POPULER</span>
-                        <h3 class="text-2xl font-bold text-red-600">Paket B: Engagement</h3>
-                        <p class="text-3xl font-bold text-red-600 mt-4">Rp 3.200k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
-                        <ul class="mt-6 space-y-4">
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Semua di Paket A</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Reel Pendek (Kutipan, Tips)</li>
-                            <li class="flex items-center font-semibold text-red-600"><span class="check-mark mr-3">&#10004;</span> Gratis Profile Makeover</li>
-                        </ul>
-                    </div>
-                    <!-- Paket C Card -->
-                    <div class="bg-white shadow-lg rounded-xl p-6">
-                        <h3 class="text-2xl font-bold text-red-700">Paket C: Maximizer</h3>
-                        <p class="text-2xl font-bold mt-4">Rp 3.700k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
-                        <ul class="mt-6 space-y-4">
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Semua di Paket B</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Carousel Dokumentasi Ibadah</li>
-                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Video Momen Penyembahan</li>
-                        </ul>
                     </div>
                 </div>
             </section>
