@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Energetic Professional (Slate, Zinc, Red) -->
-    <!-- Application Structure Plan: The SPA is designed as a single, scrollable page with interactive components to enhance user exploration. It starts with a Hero section to state the value proposition. The core is a 'Feature Comparison' section that displays as a detailed table on all screens. This is followed by a 'Package Value Visualized' section with a Chart.js bar chart. Below this, 'A La Carte' and 'Additional Services' are presented in a clear responsive grid. The structure concludes with a strong 'Call to Action' section. The layout is now fixed to the desktop table view for all screen sizes. -->
-    <!-- Visualization & Content Choices: 1. Package Explorer (Table): Report Info: Details of Paket A, B, C & new features. -> Goal: Compare/Organize. -> Method: Feature comparison table. -> Interaction: Visual scanning, horizontal scrolling on small screens. -> Justification: The user requested to disable the mobile-specific view. The table is now the primary view on all devices. -> Library: Tailwind CSS. 2. Value Comparison Chart: Report Info: Content items per package. -> Goal: Compare/Analyze. -> Method: Bar Chart. -> Interaction: Hover tooltips. -> Justification: Provides a quick data-driven summary. -> Library: Chart.js (Canvas). -->
+    <!-- Application Structure Plan: The SPA is designed as a single, scrollable page with interactive components to enhance user exploration. It starts with a Hero section to state the value proposition. The core is a 'Feature Comparison' section that displays as a detailed table on all screens. This is followed by a 'Package Value Visualized' section with a Chart.js bar chart, a new 'Portfolio' section, and then 'A La Carte' and 'Additional Services' in a clear responsive grid. The structure concludes with a strong 'Call to Action' section. The layout is fixed to the desktop table view for all screen sizes. -->
+    <!-- Visualization & Content Choices: 1. Package Explorer (Table): Report Info: Details of Paket A, B, C & new features. -> Goal: Compare/Organize. -> Method: Feature comparison table. -> Interaction: Visual scanning, horizontal scrolling on small screens. -> Justification: The user requested to disable the mobile-specific view. The table is now the primary view on all devices. -> Library: Tailwind CSS. 2. Portfolio Section: Report Info: Client List. -> Goal: Build Trust. -> Method: A grid of linked client names. -> Interaction: Click to visit client's Instagram. -> Justification: Adds social proof and credibility. -> Library: Tailwind CSS. 3. Value Comparison Chart: Report Info: Content items per package. -> Goal: Compare/Analyze. -> Method: Bar Chart. -> Interaction: Hover tooltips. -> Justification: Provides a quick data-driven summary. -> Library: Chart.js (Canvas). -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
@@ -197,6 +197,25 @@
                 </div>
             </section>
             
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-3xl font-bold">Dipercaya oleh Gereja-Gereja Ini</h2>
+                    <p class="text-slate-600 mt-2">Beberapa partner pelayanan kami dalam jangkauan digital.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                        <a href="https://www.instagram.com/gbibethelbandung" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@gbibethelbandung</a>
+                        <a href="https://www.instagram.com/gbibetheljakarta" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@gbibetheljakarta</a>
+                        <a href="https://www.instagram.com/gkypluit" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@gkypluit</a>
+                        <a href="https://www.instagram.com/gkypik" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@gkypik</a>
+                        <a href="https://www.instagram.com/ebcmelbourne" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@ebcmelbourne</a>
+                        <a href="https://www.instagram.com/bethelchurchmacau" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@bethelchurchmacau</a>
+                        <a href="https://www.instagram.com/gbi.gracia" target="_blank" class="bg-white px-4 py-2 rounded-lg shadow-sm text-slate-700 font-semibold hover:bg-red-50 hover:text-red-600 transition-colors">@gbi.gracia</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Other Services Section -->
             <section id="other-services" class="mb-16">
                  <div class="text-center mb-8">
