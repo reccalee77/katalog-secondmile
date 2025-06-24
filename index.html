@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Layanan Digital untuk Gereja - Secondmile.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Energetic Professional (Slate, Zinc, Red) -->
+    <!-- Application Structure Plan: The SPA is designed as a single, scrollable page with interactive components to enhance user exploration. It starts with a Hero section to state the value proposition. The core is a responsive 'Feature Comparison' section that displays as a detailed table on large screens and stacks into individual cards on mobile for optimal viewing. This is followed by a 'Package Value Visualized' section with a Chart.js bar chart. Below this, 'A La Carte' and 'Additional Services' are presented in a clear responsive grid. The structure concludes with a strong 'Call to Action' section. This dual layout for packages ensures usability across all devices. -->
+    <!-- Visualization & Content Choices: 1. Package Explorer (Responsive Table/Cards): Report Info: Details of Paket A, B, C & new features. -> Goal: Compare/Organize. -> Method: Feature comparison table (desktop) and stacked cards (mobile). -> Interaction: Visual scanning. -> Justification: The user requested a mobile-friendliness. A responsive layout that adapts from a table to cards is the best practice for complex data comparison. -> Library: Tailwind CSS. 2. Value Comparison Chart: Report Info: Content items per package. -> Goal: Compare/Analyze. -> Method: Bar Chart. -> Interaction: Hover tooltips. -> Justification: Provides a quick data-driven summary. -> Library: Chart.js (Canvas). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .check-mark {
+            color: #ef4444; /* red-500 */
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .popular-column {
+             background-color: #fef2f2; /* red-50 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-red-600 mb-2">Katalog Layanan Digital untuk Gereja</h1>
+            <p class="text-lg md:text-xl font-light text-slate-600">Secondmile.id - Melangkah Lebih Jauh dalam Pelayanan Digital</p>
+        </header>
+
+        <main>
+            <!-- Why Digital Section -->
+            <section id="intro" class="mb-16 max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-3xl font-bold mb-4">Mengapa Pelayanan Digital Penting?</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Di era digital, media sosial adalah mimbar baru untuk menyebarkan Firman, membangun komunitas, dan menjangkau jiwa-jiwa baru. <strong>Secondmile.id</strong> hadir sebagai mitra pertumbuhan gereja Anda, membantu Anda untuk <strong>Menjangkau Lebih Luas</strong>, <strong>Membangun Keterlibatan Jemaat</strong>, dan <strong>Tampil Profesional & Konsisten</strong>.
+                </p>
+            </section>
+
+            <!-- Packages Section - FULLY RESPONSIVE -->
+            <section id="packages" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-3xl font-bold">Bandingkan Paket Layanan Kami</h2>
+                    <p class="text-slate-600 mt-2">Pilih paket yang paling sesuai dengan visi dan kebutuhan gereja Anda.</p>
+                </div>
+                
+                <!-- Desktop Table View -->
+                <div class="hidden lg:block w-full max-w-6xl mx-auto">
+                    <div class="bg-white shadow-xl rounded-2xl p-2 md:p-4">
+                        <table class="w-full text-center border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="p-4 text-left text-lg font-bold">Fitur</th>
+                                    <th class="p-4 w-1/4">
+                                        <h3 class="text-xl font-bold text-red-700">Paket A</h3>
+                                        <p class="text-sm font-normal text-slate-500">Starter</p>
+                                    </th>
+                                    <th class="p-4 w-1/4 popular-column rounded-t-lg">
+                                        <span class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">PALING POPULER</span>
+                                        <h3 class="text-xl font-bold text-red-600">Paket B</h3>
+                                        <p class="text-sm font-normal text-slate-500">Engagement</p>
+                                    </th>
+                                    <th class="p-4 w-1/4">
+                                        <h3 class="text-xl font-bold text-red-700">Paket C</h3>
+                                        <p class="text-sm font-normal text-slate-500">Maximizer</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-slate-50">
+                                    <td colspan="4" class="p-3 text-left font-semibold text-slate-600">Manajemen & Laporan</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Monthly Content Plan</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                 <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Caption & Scheduling Content</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Laporan Perkembangan</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Meeting Strategi Bulanan</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                
+                                <tr class="bg-slate-50">
+                                    <td colspan="4" class="p-3 text-left font-semibold text-slate-600">Jenis Konten</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Gambar (Ayat, Kutipan)</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td class="text-slate-400">-</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Carousel (Poin Khotbah)</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Video Highlight Khotbah</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Poster Digital</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Reel Pendek (Kutipan, Tips)</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td class="popular-column"><span class="check-mark">&#10004;</span></td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Carousel (Dokumentasi Ibadah)</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700">Video (Momen Penyembahan)</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td><span class="check-mark">&#10004;</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="p-4 text-left text-slate-700 font-semibold">Gratis Profile Makeover</td>
+                                    <td class="text-slate-400">-</td>
+                                    <td class="popular-column font-semibold"><span class="check-mark">&#10004;</span></td>
+                                    <td class="font-semibold"><span class="check-mark">&#10004;</span></td>
+                                </tr>
+
+                                <tfoot>
+                                    <tr class="border-t-2 border-slate-200">
+                                        <td class="p-6 text-left font-bold text-xl">Harga / bulan</td>
+                                        <td class="p-6 text-2xl font-bold">Rp 2.550k</td>
+                                        <td class="p-6 text-3xl font-bold text-red-600 popular-column rounded-b-lg">Rp 3.200k</td>
+                                        <td class="p-6 text-2xl font-bold">Rp 3.700k</td>
+                                    </tr>
+                                </tfoot>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Mobile Card View -->
+                <div class="block lg:hidden space-y-8">
+                    <!-- Paket A Card -->
+                    <div class="bg-white shadow-lg rounded-xl p-6">
+                        <h3 class="text-2xl font-bold text-red-700">Paket A: Starter</h3>
+                        <p class="text-2xl font-bold mt-4">Rp 2.550k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Monthly Content Plan</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Caption & Scheduling</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Laporan & Meeting Bulanan</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Konten Gambar, Carousel, Video & Poster</li>
+                        </ul>
+                    </div>
+                    <!-- Paket B Card (Popular) -->
+                     <div class="bg-white shadow-2xl rounded-xl p-6 border-2 border-red-500 relative">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">PALING POPULER</span>
+                        <h3 class="text-2xl font-bold text-red-600">Paket B: Engagement</h3>
+                        <p class="text-3xl font-bold text-red-600 mt-4">Rp 3.200k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Semua di Paket A</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Reel Pendek (Kutipan, Tips)</li>
+                            <li class="flex items-center font-semibold text-red-600"><span class="check-mark mr-3">&#10004;</span> Gratis Profile Makeover</li>
+                        </ul>
+                    </div>
+                    <!-- Paket C Card -->
+                    <div class="bg-white shadow-lg rounded-xl p-6">
+                        <h3 class="text-2xl font-bold text-red-700">Paket C: Maximizer</h3>
+                        <p class="text-2xl font-bold mt-4">Rp 3.700k <span class="text-base font-normal text-slate-500">/ bulan</span></p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Semua di Paket B</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Carousel Dokumentasi Ibadah</li>
+                            <li class="flex items-center"><span class="check-mark mr-3">&#10004;</span> Video Momen Penyembahan</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Chart Section -->
+            <section id="comparison-chart" class="mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-3xl font-bold">Visualisasi Nilai Paket</h2>
+                    <p class="text-slate-600 mt-2">Perbandingan jumlah konten bulanan yang diproduksi per paket.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                   <div class="chart-container">
+                        <canvas id="packageChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Other Services Section -->
+            <section id="other-services" class="mb-16">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-3xl font-bold">Layanan Tambahan & Satuan</h2>
+                    <p class="text-slate-600 mt-2">Butuh sesuatu yang spesifik? Kami juga melayani kebutuhan custom.</p>
+                </div>
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">A La Carte Content</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b pb-2"><span class="text-slate-700">Gambar Tunggal (Image/Story)</span><span class="font-semibold text-slate-800">Rp 50.000</span></li>
+                            <li class="flex justify-between items-center border-b pb-2"><span class="text-slate-700">Reel Pendek (Short Reel)</span><span class="font-semibold text-slate-800">Rp 75.000</span></li>
+                            <li class="flex justify-between items-center border-b pb-2"><span class="text-slate-700">Poster Digital</span><span class="font-semibold text-slate-800">Rp 100.000</span></li>
+                            <li class="flex justify-between items-center border-b pb-2"><span class="text-slate-700">Konten Carousel (hingga 10 slide)</span><span class="font-semibold text-slate-800">Rp 125.000</span></li>
+                            <li class="flex justify-between items-center"><span class="text-slate-700">Video Highlight Khotbah (maks. 90s)</span><span class="font-semibold text-slate-800">Rp 150.000</span></li>
+                        </ul>
+                    </div>
+                     <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-red-600 mb-4">Jasa Lainnya</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center border-b pb-2"><span class="text-slate-700">Profile Makeover (Logo, Cover, Highlight)</span><span class="font-semibold text-slate-800">Rp 250.000</span></li>
+                            <li class="flex justify-between items-center"><span class="text-slate-700">Ads Management</span><span class="font-semibold text-slate-800">20% dari Budget</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer / CTA -->
+        <footer class="text-center bg-red-600 text-white rounded-xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold mb-4">Siap Melayani Lebih Luas?</h2>
+            <p class="max-w-2xl mx-auto mb-6">Mari diskusikan bagaimana kami dapat membantu gereja Anda bertumbuh secara digital. Hubungi kami untuk sesi konsultasi GRATIS.</p>
+            <div class="text-lg">
+                <p class="font-semibold">Martin Budiman Wijaya</p>
+                <div class="mt-4 flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-6">
+                   <a href="mailto:martin.bwijaya@gmail.com" class="hover:text-red-200 transition-colors">martin.bwijaya@gmail.com</a>
+                   <span class="hidden sm:inline">&bull;</span>
+                   <a href="https://wa.me/6281931113811" target="_blank" class="hover:text-red-200 transition-colors">081931113811</a>
+                   <span class="hidden sm:inline">&bull;</span>
+                   <a href="https://www.instagram.com/secondmile.id/" target="_blank" class="hover:text-red-200 transition-colors">@secondmile.id</a>
+                </div>
+            </div>
+             <p class="text-sm text-red-200 mt-8">Secondmile.id | Your Partner in Digital Ministry</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart.js implementation remains the same
+            const ctx = document.getElementById('packageChart').getContext('2d');
+            
+            const data = {
+                labels: ['Paket A: Starter', 'Paket B: Engagement', 'Paket C: Maximizer'],
+                datasets: [{
+                    label: 'Jumlah Konten per Bulan',
+                    data: [20, 24, 28],
+                    backgroundColor: [
+                        'rgba(96, 165, 250, 0.6)', // blue-400
+                        'rgba(239, 68, 68, 0.6)',  // red-500
+                        'rgba(249, 115, 22, 0.6)'  // orange-500
+                    ],
+                    borderColor: [
+                        'rgba(96, 165, 250, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(249, 115, 22, 1)'
+                    ],
+                    borderWidth: 1.5,
+                    borderRadius: 5,
+                }]
+            };
+
+            const packageChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#1e293b', // slate-800
+                            titleFont: { size: 14, weight: 'bold' },
+                            bodyFont: { size: 12 },
+                            padding: 12,
+                            cornerRadius: 6,
+                            displayColors: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#e2e8f0' // slate-200
+                            },
+                            ticks: {
+                                color: '#475569' // slate-600
+                            },
+                            title: {
+                                display: true,
+                                text: 'Total Konten per Bulan',
+                                color: '#334155' // slate-700
+                            }
+                        },
+                        x: {
+                             grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#475569' // slate-600
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
